@@ -8,4 +8,5 @@ class GameScene : public Scene {
   GameScene();
 };
 
+
 typedef std::shared_ptr<GameScene> GameScenePtr;
