@@ -1,4 +1,5 @@
 #include "Ship.h"
+#include "Laser.h"
 
 Ship::Ship()
 {
@@ -8,4 +9,47 @@ Ship::Ship()
 void Ship::draw()
 {
 	GAME.getRenderWindow().draw(sprite_);
+}
+const float SPEED = 0.3f;
+const int FIRE_DELAY = 200;
+// Omitted code...
+void Ship::update(sf::Time& elapsed) 
+{
+	sf::Vector2f pos = sprite_.getPosition();
+	float x = pos.x; 
+	float y = pos.y;
+	int msElapsed = elapsed.asMilliseconds();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) y -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) x -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) x += SPEED * msElapsed;
+	sprite_.setPosition(sf::Vector2f(x, y));
+
+	if (fireTimer_ > 0)
+	{
+		fireTimer_ -= msElapsed;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && fireTimer_ <= 0)
+	{
+		fireTimer_ = FIRE_DELAY;
+		sf::FloatRect bounds = sprite_.getGlobalBounds();
+		float laserX = x + bounds.width;
+		float laserY = y + (bounds.height / 2.0f);
+		LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
+		GAME.getCurrentScene().addGameObject(laser);
+	}
+
+
+	if (pos.x < 0) {
+		sprite_.setPosition(sf::Vector2f(x + 800, y));
+	}
+	if (pos.x > 800) {
+		sprite_.setPosition(sf::Vector2f(x - 800, y));
+	}
+	if (pos.y < 0) {
+		sprite_.setPosition(sf::Vector2f(x, y + 600));
+	}
+	if (pos.y > 600) {
+		sprite_.setPosition(sf::Vector2f(x, y - 600));
+	}
 }
