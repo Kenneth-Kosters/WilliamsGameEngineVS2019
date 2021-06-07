@@ -19,6 +19,14 @@
     <ClCompile Include="Laser.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Meteor.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="MeteorSpawner.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="GameOverMessage.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -41,6 +49,14 @@
     <ClInclude Include="Laser.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Meteor.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="MeteorSpawner.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="GameOverMessage.h" />
+    <ClInclude Include="GameOverScene.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -62,5 +78,43 @@
     <Image Include="..\..\..\Art\laser.png">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="..\..\..\Art\meteor.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion-spritesheet.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion04.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion05.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion06.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion07.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion08.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\Art\explosion09.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\Art\Courneuf-Regular.ttf">
+      <Filter>Resources</Filter>
+    </Font>
   </ItemGroup>
 </Project>
